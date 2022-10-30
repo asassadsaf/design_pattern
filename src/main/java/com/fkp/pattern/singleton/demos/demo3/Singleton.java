@@ -1,4 +1,4 @@
-package com.fkp.pattern.singleton.demo3;
+package com.fkp.pattern.singleton.demos.demo3;
 
 /**
  * 懒汉式-方法1 线程不安全  ->  方法2 线程安全（存在效率问题）

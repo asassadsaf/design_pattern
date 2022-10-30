@@ -1,4 +1,4 @@
-package com.fkp.pattern.singleton.demo6;
+package com.fkp.pattern.singleton.demos.demo6;
 
 /**
  * 饿汉式-枚举方法(在不考虑内存浪费的情况下首选)

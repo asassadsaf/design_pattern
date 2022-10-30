@@ -1,4 +1,4 @@
-package com.fkp.pattern.singleton.demo2;
+package com.fkp.pattern.singleton.demos.demo2;
 
 /**
  * 饿汉式-方法2 静态代码块方式

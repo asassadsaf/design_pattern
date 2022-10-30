@@ -1,4 +1,4 @@
-package com.fkp.pattern.singleton.demo4;
+package com.fkp.pattern.singleton.demos.demo4;
 
 /**
  * 懒汉式-方法3 双重检查锁（解决效率问题，在多线程下可能出现空指针）  ->  方法4 volatile修饰instance（既保证线程安全又解决效率问题，多线程下也不会出现空指针）

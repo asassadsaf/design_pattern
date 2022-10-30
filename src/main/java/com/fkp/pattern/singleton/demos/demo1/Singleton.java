@@ -1,4 +1,4 @@
-package com.fkp.pattern.singleton.demo1;
+package com.fkp.pattern.singleton.demos.demo1;
 
 /**
  * 饿汉式-方法1 静态变量方式

@@ -1,4 +1,4 @@
-package com.fkp.pattern.singleton.demo1;
+package com.fkp.pattern.singleton.demos.demo2;
 
 public class Test {
     public static void main(String[] args) {
