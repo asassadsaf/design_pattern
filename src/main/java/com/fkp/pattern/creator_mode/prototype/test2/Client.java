@@ -1,5 +1,6 @@
 package com.fkp.pattern.creator_mode.prototype.test2;
 
+import cn.hutool.core.util.ObjectUtil;
 import org.springframework.beans.BeanUtils;
 
 /**
