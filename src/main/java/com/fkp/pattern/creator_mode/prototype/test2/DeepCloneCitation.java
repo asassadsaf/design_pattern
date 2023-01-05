@@ -26,35 +26,32 @@ public class DeepCloneCitation implements Cloneable, Serializable{
         this.stu = stu;
     }
 
-//    /**
-//     * 重新创建原型对象中属性指向的对象实例并赋值给新对象的属性实现深克隆
-//     * @return
-//     * @throws CloneNotSupportedException
-//     */
-//    @Override
-//    public DeepCloneCitation clone() throws CloneNotSupportedException {
-//        DeepCloneCitation cloneDeepCloneCitation = (DeepCloneCitation) super.clone();
-//        if(cloneDeepCloneCitation.getStu() == null){
-//            return cloneDeepCloneCitation;
-//        }
-//        Stu newStu = new Stu();
-//        newStu.setName(cloneDeepCloneCitation.getStu().getName());
-//        cloneDeepCloneCitation.setStu(newStu);
-//        return cloneDeepCloneCitation;
-//    }
+    /**
+     * 重新创建原型对象中属性指向的对象实例并赋值给新对象的属性实现深克隆
+     * @return
+     * @throws CloneNotSupportedException
+     */
+    @Override
+    public DeepCloneCitation clone() throws CloneNotSupportedException {
+        DeepCloneCitation cloneDeepCloneCitation = (DeepCloneCitation) super.clone();
+        if(cloneDeepCloneCitation.getStu() == null){
+            return cloneDeepCloneCitation;
+        }
+        cloneDeepCloneCitation.setStu(cloneDeepCloneCitation.getStu().clone());
+        return cloneDeepCloneCitation;
+    }
 
 //    /**
 //     * 使用序列化反序列化重新创建新对象中属性指向的对象实例实现深克隆
 //     * @return
-//     * @throws CloneNotSupportedException
 //     */
-//    @Override
-//    public DeepCloneCitation clone() throws CloneNotSupportedException {
-//        DeepCloneCitation cloneDeepCloneCitation = (DeepCloneCitation) super.clone();
+//    public DeepCloneCitation deepClone() {
+//        //无需调用父类的clone方法则无需实现Cloneable接口和重写clone方法
+////        DeepCloneCitation cloneDeepCloneCitation = (DeepCloneCitation) super.clone();
 //        ByteArrayOutputStream bos = new ByteArrayOutputStream();
 //        try {
 //            ObjectOutputStream oos = new ObjectOutputStream(bos);
-//            oos.writeObject(cloneDeepCloneCitation);
+//            oos.writeObject(this);
 //        } catch (IOException e) {
 //            throw new RuntimeException("复制原型对象失败");
 //        }
@@ -71,17 +68,16 @@ public class DeepCloneCitation implements Cloneable, Serializable{
 //    }
 
 
-    /**
-     * 使用hutool工具类的ObjectUtil实现对象深克隆
-     * @return
-     * @throws CloneNotSupportedException
-     */
-    @Override
-    public DeepCloneCitation clone() throws CloneNotSupportedException {
-        DeepCloneCitation clone = (DeepCloneCitation) super.clone();
+//    /**
+//     * 使用hutool工具类的ObjectUtil实现对象深克隆
+//     * @return
+//     */
+//    public final DeepCloneCitation deepClone() {
+//        //无需调用父类的clone方法则无需实现Cloneable接口和重写clone方法
+////        DeepCloneCitation clone = (DeepCloneCitation) super.clone();
 //        return ObjectUtil.cloneByStream(this);
-        return ObjectUtil.cloneByStream(clone);
-    }
+////        return ObjectUtil.cloneByStream(clone);
+//    }
 
     public void show(){
         System.out.println(this.stu.getName() + "同学获得奖状！");
