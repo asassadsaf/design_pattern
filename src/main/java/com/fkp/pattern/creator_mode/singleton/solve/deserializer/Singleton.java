@@ -7,6 +7,11 @@ import java.io.Serializable;
  */
 public class Singleton implements Serializable {
 
+    /**
+     * 实现Serializable接口的类需要显示的指定serialVersionUID的值
+     * 若不指定则jvm会自动计算该类的序列化版本值，默认的serialVersionUID计算对类详细信息非常敏感，可能因不同的JVM实现而异，并且在反序列化过程中会导致意外的InvalidClassExceptions。
+     * 只有相同的serialVersionUID才能进行序列化和反序列化，否则在反序列化时会抛出InvalidClassExceptions异常
+     */
     private static final long serialVersionUID = 4838064301681900777L;
 
     private Singleton(){
