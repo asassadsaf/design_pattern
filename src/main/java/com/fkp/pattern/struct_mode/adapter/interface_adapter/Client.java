@@ -1,10 +1,15 @@
 package com.fkp.pattern.struct_mode.adapter.interface_adapter;
 
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+
 /**
  * 客户端，通过电脑的usb接口读取sd卡的内容，需要使用usb适配sd卡的适配器
  */
 public class Client {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         //1.若没有适配器，则电脑只能读写usb接口的数据
         Computer computer = new Computer();
         UsbInterface usbInterface = new UsbInterfaceImpl();
