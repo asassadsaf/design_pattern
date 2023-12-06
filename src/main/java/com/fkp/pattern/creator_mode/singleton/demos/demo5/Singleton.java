@@ -17,6 +17,8 @@ public class Singleton implements Serializable {
      * 实例由内部类创建，由于JVM在加载外部类的过程中,是不会加载静态内部类的,只有内部类的属性/方法被调用时才会被加载,并初始化其静态属性。
      * 静态属性由于被static修饰，保证只被实例化一次，并且严格保证实例化顺序。
      */
+     //new Singleton()时idea给出如下提示Instantiation of utility class 'Singleton' 
+     //意思是该类只有静态方法或属性，没有必要实例化，如果添加一个成员属性，则提示会消失。
     private static class SingletonHolder{
         private static final Singleton INSTANCE = new Singleton();
     }
